@@ -20,5 +20,9 @@ class User1 extends UserGeneral {
         ];
     }
 
+    public function checkout() {
+        $total = $this->cart->getTotal();
 
+        var_dump($total);
+    }
 }

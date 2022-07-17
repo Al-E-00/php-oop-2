@@ -15,6 +15,8 @@ require_once __DIR__ . "/classes/Section/Foods.php";
 require_once __DIR__ . "/classes/Section/Games.php";
 require_once __DIR__ . "/classes/Section/Kennels.php";
 require_once __DIR__ . "/classes/Users/User1.php";
+require_once __DIR__ . "/Cart.php";
+
 
 //the following lines of code is to add some products inside the different categories
 $products = [
@@ -29,11 +31,12 @@ $user = [
     new User1(),
 ];
 
-$user[0]->cart->addProducts([$products[0]], [$products[3]]);
+$user[0]->cart->addProducts([$products[0], $products[3]]);
 
-
-var_dump($products);
+/* var_dump($products);
 var_dump($user);
 
 var_dump($user[0]->cart->getProducts());
-var_dump($user[0]->paymentMethods);
+var_dump($user[0]->paymentMethods); */
+
+$user[0]->checkout();

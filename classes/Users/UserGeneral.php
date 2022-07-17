@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__ . "/../CheckOut/Cart.php";
+require_once __DIR__ . "/../../Cart.php";
 
 class UserGeneral {
     private bool $registered = false;

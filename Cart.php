@@ -16,14 +16,15 @@ class Cart
     /* 
     function that returns the total cost of the products inside the cart
     */
-    public function getTotal($discount=0)
+    public function getTotal($discount= 0)
     {
-        $total = 0;
+        $total = 0; 
         
-        foreach($this->products as $product) {
-            $total = $product[3];
+        foreach ($this->products as $product) {
+            $total += $product->getPrice();
         }
-    }
+        return $total;
+    }    
 
     //getter
     public function getProducts()
