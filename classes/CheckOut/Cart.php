@@ -3,16 +3,16 @@ class Cart
 {
     private $products = [];
 
-    public function addProduct($product)
+    public function addProducts(...$_products)
     {
-        $this->products[] = $product;
+        array_push($this->products, ...$_products);
     }
 
     public function removeProduct($product)
     {
         unset($product[$product]);
     }
-    
+
     /* 
     function that returns the total cost of the products inside the cart
     */
