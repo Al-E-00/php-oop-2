@@ -4,7 +4,7 @@ require_once __DIR__ . "/Products.php";
 
 class Foods extends Products {
     private string $expirationDate;
-    private string $ingredients;
+    private array $ingredients;
     private bool $vegan;
 
     function __construct($_product, $_forWhatAnimal, $_price, $_available, $_expirationDate, $_ingredients, $_vegan)
