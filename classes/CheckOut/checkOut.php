@@ -5,6 +5,7 @@ require_once __DIR__ . "/Cart.php";
 class CheckOut extends Cart {
     private $discountApplicable;
     private $paymentSuccessful;
+    private $totalPrice;
 
 
     /**
@@ -43,6 +44,26 @@ class CheckOut extends Cart {
     public function setPaymentSuccessful($paymentSuccessful)
     {
         $this->paymentSuccessful = $paymentSuccessful;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of totalPrice
+     */ 
+    public function getTotalPrice()
+    {
+        return $this->totalPrice;
+    }
+
+    /**
+     * Set the value of totalPrice
+     *
+     * @return  self
+     */ 
+    public function setTotalPrice($totalPrice)
+    {
+        $this->totalPrice = $totalPrice;
 
         return $this;
     }

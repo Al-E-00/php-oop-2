@@ -1,9 +1,23 @@
 <?php
 
+require_once __DIR__ . "/../CheckOut/Cart.php";
+
 class UserGeneral {
-    private $registered; 
-    private $age;
-    private $subscribedToNewsLetter;
+    private bool $registered = false;
+    private string $firstName;
+    private string $lastName;
+    private int $age;
+    private bool $subscribedToNewsLetter;
+    public Cart $cart;
+
+    function __construct($_registered, $_age, $_subscribed, $_firstName, $_lastName)
+    {
+        $this->setRegistered($_registered);
+        $this->setAge($_age);
+        $this->setSubscribedToNewsLetter($_subscribed);
+        $this->setFirstName($_firstName);
+        $this->setLastName($_lastName);
+    }
 
     /**
      * Get the value of age
@@ -38,7 +52,7 @@ class UserGeneral {
      *
      * @return  self
      */ 
-    public function setRegistered($registered)
+    protected function setRegistered($registered)
     {
         $this->registered = $registered;
 
@@ -61,6 +75,46 @@ class UserGeneral {
     public function setSubscribedToNewsLetter($subscribedToNewsLetter)
     {
         $this->subscribedToNewsLetter = $subscribedToNewsLetter;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of firstName
+     */ 
+    public function getFirstName()
+    {
+        return $this->firstName;
+    }
+
+    /**
+     * Set the value of firstName
+     *
+     * @return  self
+     */ 
+    public function setFirstName($firstName)
+    {
+        $this->firstName = $firstName;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of lastName
+     */ 
+    public function getLastName()
+    {
+        return $this->lastName;
+    }
+
+    /**
+     * Set the value of lastName
+     *
+     * @return  self
+     */ 
+    public function setLastName($lastName)
+    {
+        $this->lastName = $lastName;
 
         return $this;
     }

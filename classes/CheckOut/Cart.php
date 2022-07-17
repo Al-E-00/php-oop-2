@@ -1,46 +1,34 @@
-<?php 
+<?php
+class Cart
+{
+    private $products = [];
 
-class Cart {
-    private $totalItems;
-    private $totalPrice;
-
-    /**
-     * Get the value of totalItems
-     */ 
-    public function getTotalItems()
+    public function addProduct($product)
     {
-        return $this->totalItems;
+        $this->products[] = $product;
     }
 
-    /**
-     * Set the value of totalItems
-     *
-     * @return  self
-     */ 
-    public function setTotalItems($totalItems)
+    public function removeProduct($product)
     {
-        $this->totalItems = $totalItems;
-
-        return $this;
+        unset($product[$product]);
+    }
+    
+    /* 
+    function that returns the total cost of the products inside the cart
+    */
+    public function getTotal($discount=0)
+    {
+        $total = 0;
+        
+        foreach($this->products as $product) {
+            $total = $product[3];
+        }
     }
 
-    /**
-     * Get the value of totalPrice
-     */ 
-    public function getTotalPrice()
+    //getter
+    public function getProducts()
     {
-        return $this->totalPrice;
-    }
-
-    /**
-     * Set the value of totalPrice
-     *
-     * @return  self
-     */ 
-    public function setTotalPrice($totalPrice)
-    {
-        $this->totalPrice = $totalPrice;
-
-        return $this;
+        return $this->products;
+    
     }
 }
