@@ -1,9 +1,11 @@
-<!-- L’e-commerce vende prodotti per gli animali.
-I prodotti saranno oltre al cibo, anche giochi, cucce, etc.
-L’utente potrà sia comprare i prodotti senza registrarsi, oppure iscriversi e
-ricevere il 20% di sconto su tutti i prodotti.
-Il pagamento avviene con la carta di credito, che non deve essere scaduta.
-BONUS:
-Alcuni prodotti (es. antipulci) avranno la caratteristica che saranno disponibili 
-solo in un periodo particolare (es. da maggio ad agosto). -->
+<!-- The commerce online sells product for animals
+The products will be in addition to foods, also game, kennels, ecc.
+The user will be able as well as buy products without being registered, also
+subscribe and receive a 20% of discount on all the products.
+The payment is with credit card that haven't be expired. 
+
+BONUS: 
+Some products (ex. anti-fleas) will have the peculiarity that they will be
+available only for a particular period (ex. from may to august);
+-->
 
