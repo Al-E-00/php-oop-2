@@ -3,11 +3,20 @@
 require_once __DIR__ . "/Products.php";
 
 class Game extends Products {
-    private $color; 
-    private $materials; 
-    private $size;
-    private $weight;
-    private $age;
+    private string $color; 
+    private string $materials; 
+    private string $size;
+    private string $weight;
+    private int $animalAge;
+
+    function __construct($_product, $_forWhatAnimal, $_price, $_available, $_color, $_materials, $_size, $_weight, $_animalAge ) {
+        parent::__construct($_product, $_forWhatAnimal, $_price, $_available);
+        $this->setColor($_color);
+        $this->setMaterials($_materials);
+        $this->setSize($_size);
+        $this->setWeight($_weight);
+        $this->setAnimalAge($_animalAge);
+    }
 
     /**
      * Get the value of size
@@ -89,22 +98,24 @@ class Game extends Products {
         return $this;
     }
 
+
+
     /**
-     * Get the value of age
+     * Get the value of animalAge
      */ 
-    public function getAge()
+    public function getAnimalAge()
     {
-        return $this->age;
+        return $this->animalAge;
     }
 
     /**
-     * Set the value of age
+     * Set the value of animalAge
      *
      * @return  self
      */ 
-    public function setAge($age)
+    public function setAnimalAge($animalAge)
     {
-        $this->age = $age;
+        $this->animalAge = $animalAge;
 
         return $this;
     }

@@ -1,13 +1,21 @@
 <?php
 
 class Products {
-    private $product;
+    private string $product;
     private $id;
-    private $ForWhatAnimal;
-    private $price;
-    private $discount;
-    private $available;
-
+    private string $forWhatAnimal;
+    private float $price;
+    private bool $available;
+    
+    function __construct($_product, $_forWhatAnimal, $_price, $_available) {
+        $this->setProduct($_product);
+        $this->setForWhatAnimal($_forWhatAnimal);
+        $this->setPrice($_price);
+        $this->setAvailable($_available);
+        $this->setId();
+    }
+    
+    
     /**
      * Get the value of product
      */ 
@@ -15,7 +23,7 @@ class Products {
     {
         return $this->product;
     }
-
+    
     /**
      * Set the value of product
      *
@@ -24,26 +32,28 @@ class Products {
     public function setProduct($product)
     {
         $this->product = $product;
-
+        
         return $this;
     }
-
+    
+    
     /**
      * Get the value of id
      */ 
     public function getId()
     {
         return $this->id;
+        
     }
-
+    
     /**
      * Set the value of id
      *
      * @return  self
      */ 
-    public function setId($id)
+    private function setId()
     {
-        $this->id = $id;
+        $this->id = uniqid("item_");
 
         return $this;
     }
@@ -53,7 +63,7 @@ class Products {
      */ 
     public function getForWhatAnimal()
     {
-        return $this->ForWhatAnimal;
+        return $this->forWhatAnimal;
     }
 
     /**
@@ -61,9 +71,9 @@ class Products {
      *
      * @return  self
      */ 
-    public function setForWhatAnimal($ForWhatAnimal)
+    public function setForWhatAnimal($forWhatAnimal)
     {
-        $this->ForWhatAnimal = $ForWhatAnimal;
+        $this->forWhatAnimal = $forWhatAnimal;
 
         return $this;
     }
@@ -88,25 +98,6 @@ class Products {
         return $this;
     }
 
-    /**
-     * Get the value of discount
-     */ 
-    public function getDiscount()
-    {
-        return $this->discount;
-    }
-
-    /**
-     * Set the value of discount
-     *
-     * @return  self
-     */ 
-    public function setDiscount($discount)
-    {
-        $this->discount = $discount;
-
-        return $this;
-    }
 
     /**
      * Get the value of available

@@ -3,10 +3,21 @@
 require_once __DIR__ . "/Products.php";
 
 class Kennels extends Products {
-    private $material;
-    private $size;
-    private $outdoor;
-    private $portable;
+    private string $material;
+    private string $size;
+    private bool $outdoor;
+    private bool $portable;
+
+    function __construct($_product, $_forWhatAnimal, $_price, $_available, $_material, $_size, $_outdoor, $_portable)
+    {
+        parent::__construct($_product, $_forWhatAnimal, $_price, $_available);
+        $this->setMaterial($_material);
+        $this->setSize($_size);
+        $this->setOutdoor($_outdoor);
+        $this->setPortable($_portable);
+
+    }
+
 
     /**
      * Get the value of material

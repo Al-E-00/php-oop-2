@@ -3,9 +3,17 @@
 require_once __DIR__ . "/Products.php";
 
 class Foods extends Products {
-    private $expirationDate;
-    private $ingredients;
-    private $vegan;
+    private string $expirationDate;
+    private string $ingredients;
+    private bool $vegan;
+
+    function __construct($_product, $_forWhatAnimal, $_price, $_available, $_expirationDate, $_ingredients, $_vegan)
+    {
+        parent::__construct($_product, $_forWhatAnimal, $_price, $_available);
+        $this->setExpirationDate($_expirationDate);
+        $this->setIngredients($_ingredients);
+        $this->setVegan($_vegan);
+    }
     
 
     /**
