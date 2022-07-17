@@ -3,6 +3,7 @@
 require_once __DIR__ . "/UserGeneral.php";
 require_once __DIR__ . "/../Payment/PayPal.php";
 require_once __DIR__ . "/../Payment/AmericanExpress.php";
+require_once __DIR__ . "/../../Cart.php";
 
 class User1 extends UserGeneral {
     function __construct()
@@ -18,11 +19,8 @@ class User1 extends UserGeneral {
             new AmericanExpress("20/12/2020", "4312 4656 1234 6445", 633),
             new AmericanExpress("23/08/2029", "4383 4928 4382 4394", 752),
         ];
+
+        
     }
 
-    public function checkout() {
-        $total = $this->cart->getTotal();
-
-        var_dump($total);
-    }
 }
