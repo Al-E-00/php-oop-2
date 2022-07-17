@@ -3,8 +3,14 @@
 require_once __DIR__ . "/PaymentMethods.php";
 
 class PayPal extends PaymentMethods {
-    private $countNumber;
-    private $accountName;
+    private string $countNumber;
+    private string $accountName;
+
+    function __construct($_expirationDate, $_countNumber, $_accountName){
+        parent::__construct($_expirationDate);
+        $this->setCountNumber($_countNumber);
+        $this->setAccountName($_accountName);
+    }
 
     /**
      * Get the value of countNumber

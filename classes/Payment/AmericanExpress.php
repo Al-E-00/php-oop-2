@@ -3,8 +3,14 @@
 require_once __DIR__ . "/PaymentMethods.php";
 
 class AmericanExpress extends PaymentMethods {
-    private $cardNumber;
-    private $cvv;
+    private string $cardNumber;
+    private int $cvv;
+
+    function __construct($_expirationDate, $_cardNumber, $_cvv){
+        parent::__construct($_expirationDate);
+        $this->setCardNumber($_cardNumber);
+        $this->setCvv($_cvv);
+    }
 
     /**
      * Get the value of cardNumber

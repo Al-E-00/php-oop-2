@@ -36,3 +36,4 @@ var_dump($products);
 var_dump($user);
 
 var_dump($user[0]->cart->getProducts());
+var_dump($user[0]->paymentMethods);

@@ -1,27 +1,10 @@
 <?php 
 
 class PaymentMethods {
-    private $method;
-    private $expirationDate;
+    private string $expirationDate;
 
-    /**
-     * Get the value of method
-     */ 
-    public function getMethod()
-    {
-        return $this->method;
-    }
-
-    /**
-     * Set the value of method
-     *
-     * @return  self
-     */ 
-    public function setMethod($method)
-    {
-        $this->method = $method;
-
-        return $this;
+    function __construct($_expirationDate) {
+        $this->setExpirationDate($_expirationDate);
     }
 
     /**
