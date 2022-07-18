@@ -1,21 +1,19 @@
 <?php
 
 require_once __DIR__ . "/../Checkout/Cart.php";
-require_once __DIR__ . "/../Checkout/Checkout.php";
 
-class UserGeneral extends Checkout{
+class UserGeneral {
     private string $firstName;
     private string $lastName;
     private int $age;
-    private bool $subscribedToNewsLetter;
-    private Cart $cart;
-    private Checkout $checkout;
+    private bool $userRegistered;
+
 
 
     function __construct($_age, $_subscribed, $_firstName, $_lastName)
     {
         $this->setAge($_age);
-        $this->setSubscribedToNewsLetter($_subscribed);
+        $this->setUserRegistered($_subscribed);
         $this->setFirstName($_firstName);
         $this->setLastName($_lastName);
     }
@@ -36,26 +34,6 @@ class UserGeneral extends Checkout{
     public function setAge($age)
     {
         $this->age = $age;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of subscribedToNewsLetter
-     */ 
-    public function getSubscribedToNewsLetter()
-    {
-        return $this->subscribedToNewsLetter;
-    }
-
-    /**
-     * Set the value of subscribedToNewsLetter
-     *
-     * @return  self
-     */ 
-    public function setSubscribedToNewsLetter($subscribedToNewsLetter)
-    {
-        $this->subscribedToNewsLetter = $subscribedToNewsLetter;
 
         return $this;
     }
@@ -96,6 +74,26 @@ class UserGeneral extends Checkout{
     public function setLastName($lastName)
     {
         $this->lastName = $lastName;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of userRegistered
+     */ 
+    public function getUserRegistered()
+    {
+        return $this->userRegistered;
+    }
+
+    /**
+     * Set the value of userRegistered
+     *
+     * @return  self
+     */ 
+    public function setUserRegistered($userRegistered)
+    {
+        $this->userRegistered = $userRegistered;
 
         return $this;
     }

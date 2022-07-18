@@ -1,17 +1,6 @@
 <?php
-require_once __DIR__ . "/Checkout.php";
-class Cart extends Checkout
+class Cart
 {
-    function __construct()
-    {
-        $this->setTotalDiscount(
-            $this->getRegistered() ? 0 : 20
-        );
-        $this->setFinalPrice(
-            $this->getTotal() * $this->getTotalDiscount() / 100
-        );
-    }
-
     private $products = [];
 
     public function addProducts(...$_products)
@@ -37,4 +26,5 @@ class Cart extends Checkout
     {
         return $this->products;
     }
+    
 }
