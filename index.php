@@ -30,7 +30,7 @@ $user = [
     new User1(),
 ];
 
-$user[0]->cart->addProducts([$products[0], $products[3]]);
+$user[0]->cart->addProducts($products[0], $products[3]);
 
 /* var_dump($products);
 var_dump($user);
