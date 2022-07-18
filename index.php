@@ -30,7 +30,12 @@ $user = [
     new User1(),
 ];
 
-$user[0]->cart->addProducts($products[0], $products[3]);
+
+try {
+    $user[0]->cart->addProducts($products[0], $products[3]);
+} catch(Exception $e){
+    echo "user not correct";
+}
 
 /* var_dump($products);
 var_dump($user);
