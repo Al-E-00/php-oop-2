@@ -1,7 +1,8 @@
 <?php
-
-class Cart
+require_once __DIR__ . "/Checkout.php";
+class Cart extends Checkout
 {
+
     private $products = [];
 
     public function addProducts(...$_products)

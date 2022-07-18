@@ -1,16 +1,9 @@
 <?php
 
-require_once __DIR__ . "/Cart.php";
-
-class Checkout extends Cart{
+class Checkout {
     private $registered=false;
-    private $totalPrice;
     private $totalDiscount;
     private $finalPrice;
-    private Cart $cart;
-
-
-
     /**
      * Get the value of registered
      */ 
@@ -29,25 +22,9 @@ class Checkout extends Cart{
         $this->registered = $registered;
 
         return $this;
-    }
+        }
 
-    /**
-     * Get the value of totalPrice
-     */ 
-    public function getTotalPrice()
-    {
-        return $this->totalPrice;
-    }
-
-    /**
-     * Set the value of totalPrice
-     *
-     * @return  self
-     */ 
-    private function setTotalPrice()
-    {
-        return $this->cart->getTotal();
-    }
+        
 
     /**
      * Get the value of totalDiscount
@@ -62,13 +39,11 @@ class Checkout extends Cart{
      *
      * @return  self
      */ 
-    private function setTotalDiscount()
+    public function setTotalDiscount($totalDiscount)
     {
-        if($this->getRegistered() === true) {
-            return ($this->getTotalPrice() * 100) / 20;
-        } else {
-            return $this->getTotalPrice();
-        }
+        $this->totalDiscount = $totalDiscount;
+
+        return $this;
     }
 
     /**
@@ -84,8 +59,10 @@ class Checkout extends Cart{
      *
      * @return  self
      */ 
-    private function setFinalPrice()
+    public function setFinalPrice($finalPrice)
     {
-        return $this->getTotalPrice - $this->getTotalDiscount;
+        $this->finalPrice = $finalPrice;
+
+        return $this;
     }
 }
