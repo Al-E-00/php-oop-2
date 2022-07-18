@@ -12,13 +12,12 @@ class UserGeneral extends Checkout{
     private Checkout $checkout;
 
 
-    function __construct($_age, $_subscribed, $_firstName, $_lastName, $_registered)
+    function __construct($_age, $_subscribed, $_firstName, $_lastName)
     {
         $this->setAge($_age);
         $this->setSubscribedToNewsLetter($_subscribed);
         $this->setFirstName($_firstName);
         $this->setLastName($_lastName);
-        $this->setRegistered($_registered);
     }
 
     /**

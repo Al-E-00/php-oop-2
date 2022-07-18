@@ -13,9 +13,9 @@ class User1 extends UserGeneral {
         $this->setLastName("Ocasio");
         $this->setAge(32);
         $this->setSubscribedToNewsLetter(false);
-        $this->setRegistered(true);
         $this->cart = new Cart();
         $this->checkout = new Checkout();
+        $this->checkout->setRegistered(true);
         $this->paymentMethods = [
             new PayPal("13/06/2024", "42873981230943", "Matthew Ocasio"),
             new AmericanExpress("20/12/2020", "4312 4656 1234 6445", 633),
