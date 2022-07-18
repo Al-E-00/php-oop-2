@@ -4,6 +4,12 @@ class Checkout {
     private $registered=false;
     private $totalDiscount;
     private $finalPrice;
+
+    public function __construct($_totalDiscount, $_finalPrice)
+    {
+        $this->setTotalDiscount($_totalDiscount);
+        $this->setFinalPrice($_finalPrice);
+    }
     /**
      * Get the value of registered
      */ 

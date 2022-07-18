@@ -43,7 +43,4 @@ var_dump($user);
 var_dump($user[0]->cart->getProducts());
 var_dump($user[0]->paymentMethods); */
 var_dump($user[0]->cart->getTotal());
-var_dump($user[0]->checkout->getRegistered());
 var_dump($user[0]->cart->getFinalPrice());
-var_dump($user[0]->checkout->getTotalDiscount());
-var_dump($user[0]->checkout->getFinalPrice());
