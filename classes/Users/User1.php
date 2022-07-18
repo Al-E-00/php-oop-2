@@ -3,9 +3,10 @@
 require_once __DIR__ . "/UserGeneral.php";
 require_once __DIR__ . "/../Payment/PayPal.php";
 require_once __DIR__ . "/../Payment/AmericanExpress.php";
-require_once __DIR__ . "/../../Cart.php";
+require_once __DIR__ .  "/../Checkout/Cart.php";
 
 class User1 extends UserGeneral {
+    private $checkout;
     function __construct()
     {
         $this->setFirstName("Matthew");
@@ -21,4 +22,24 @@ class User1 extends UserGeneral {
         ];        
     }
 
+
+    /**
+     * Get the value of checkout
+     */ 
+    public function getCheckout()
+    {
+        return $this->checkout;
+    }
+
+    /**
+     * Set the value of checkout
+     *
+     * @return  self
+     */ 
+    public function setCheckout($checkout)
+    {
+        $this->checkout = $checkout;
+
+        return $this;
+    }
 }
