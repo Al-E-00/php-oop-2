@@ -5,8 +5,8 @@ require_once __DIR__ . "/../Payment/PayPal.php";
 require_once __DIR__ . "/../Payment/AmericanExpress.php";
 require_once __DIR__ .  "/../Checkout/Cart.php";
 
+
 class User1 extends UserGeneral {
-    private $checkout;
     function __construct()
     {
         $this->setFirstName("Matthew");
@@ -15,31 +15,11 @@ class User1 extends UserGeneral {
         $this->setRegistered(true);
         $this->setSubscribedToNewsLetter(false);
         $this->cart = new Cart();
+        $this->checkout = new Checkout();
         $this->paymentMethods = [
             new PayPal("13/06/2024", "42873981230943", "Matthew Ocasio"),
             new AmericanExpress("20/12/2020", "4312 4656 1234 6445", 633),
             new AmericanExpress("23/08/2029", "4383 4928 4382 4394", 752),
         ];        
-    }
-
-
-    /**
-     * Get the value of checkout
-     */ 
-    public function getCheckout()
-    {
-        return $this->checkout;
-    }
-
-    /**
-     * Set the value of checkout
-     *
-     * @return  self
-     */ 
-    public function setCheckout($checkout)
-    {
-        $this->checkout = $checkout;
-
-        return $this;
     }
 }

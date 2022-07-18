@@ -1,6 +1,7 @@
 <?php
 
 require_once __DIR__ . "/../Checkout/Cart.php";
+require_once __DIR__ . "/../Checkout/Checkout.php";
 
 class UserGeneral {
     private bool $registered = false;
@@ -8,7 +9,9 @@ class UserGeneral {
     private string $lastName;
     private int $age;
     private bool $subscribedToNewsLetter;
-    public Cart $cart;
+    private Cart $cart;
+    private Checkout $checkout;
+
 
     function __construct($_registered, $_age, $_subscribed, $_firstName, $_lastName)
     {
