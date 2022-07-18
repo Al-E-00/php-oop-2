@@ -3,8 +3,7 @@
 require_once __DIR__ . "/../Checkout/Cart.php";
 require_once __DIR__ . "/../Checkout/Checkout.php";
 
-class UserGeneral {
-    private bool $registered = false;
+class UserGeneral extends Checkout{
     private string $firstName;
     private string $lastName;
     private int $age;
@@ -13,13 +12,13 @@ class UserGeneral {
     private Checkout $checkout;
 
 
-    function __construct($_registered, $_age, $_subscribed, $_firstName, $_lastName)
+    function __construct($_age, $_subscribed, $_firstName, $_lastName, $_registered)
     {
-        $this->setRegistered($_registered);
         $this->setAge($_age);
         $this->setSubscribedToNewsLetter($_subscribed);
         $this->setFirstName($_firstName);
         $this->setLastName($_lastName);
+        $this->setRegistered($_registered);
     }
 
     /**
@@ -38,26 +37,6 @@ class UserGeneral {
     public function setAge($age)
     {
         $this->age = $age;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of registered
-     */ 
-    public function getRegistered()
-    {
-        return $this->registered;
-    }
-
-    /**
-     * Set the value of registered
-     *
-     * @return  self
-     */ 
-    protected function setRegistered($registered)
-    {
-        $this->registered = $registered;
 
         return $this;
     }

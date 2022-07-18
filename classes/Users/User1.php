@@ -3,7 +3,7 @@
 require_once __DIR__ . "/UserGeneral.php";
 require_once __DIR__ . "/../Payment/PayPal.php";
 require_once __DIR__ . "/../Payment/AmericanExpress.php";
-require_once __DIR__ .  "/../Checkout/Cart.php";
+
 
 
 class User1 extends UserGeneral {
@@ -12,8 +12,8 @@ class User1 extends UserGeneral {
         $this->setFirstName("Matthew");
         $this->setLastName("Ocasio");
         $this->setAge(32);
-        $this->setRegistered(true);
         $this->setSubscribedToNewsLetter(false);
+        $this->setRegistered(true);
         $this->cart = new Cart();
         $this->checkout = new Checkout();
         $this->paymentMethods = [

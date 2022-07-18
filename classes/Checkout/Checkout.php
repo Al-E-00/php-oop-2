@@ -19,13 +19,11 @@ class Checkout {
      *
      * @return  self
      */ 
-    public function setRegistered()
+    public function setRegistered($registered)
     {
-        if ($this->setRegistered() === true) {
-            return true;
-        } else {
-            return false;
-        }
+        $this->registered = $registered;
+
+        return $this;
     }
 
     /**
