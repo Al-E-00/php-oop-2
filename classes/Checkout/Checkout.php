@@ -7,6 +7,7 @@ class Checkout extends Cart{
     private $totalPrice;
     private $totalDiscount;
     private $finalPrice;
+    private Cart $cart;
 
 
 
